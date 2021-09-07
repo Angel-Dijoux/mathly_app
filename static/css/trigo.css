@@ -1,0 +1,17 @@
+.dessin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-right: 45px;
+
+}
+
+@media screen and (max-width: 800px){
+    .dessin {
+        margin-right: 10px;
+
+    }
+}

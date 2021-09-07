@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/input.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header_.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/poly.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/trigo.css' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'css/favicon.svg' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.22.7/function-plot.js" integrity="sha512-MUHYAU7vRlaN0MVTEVPuh99xifmHD9kmqV9ehc8UYtsd99B+dP2TRT/N5wPTyocj9+/NSOgsS4u5cL5gTPl9eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <!--npm i function-plot-->
+    <title>MathLy</title>
+</head>
+    <div class="header">
+        <h1 class="title_head"><a class="title_head" href="home">MathLy</a></h1>
+    </div>
+        <div class="hamb">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+        <div class="nav_b">
+            <ul>
+                <li><a href="poly">Polynôme du second degré</a></li>
+                <li><a href="trigo">Probabilité</a></li>
+                <li><a href="#">lorem</a></li>
+            </ul>
+        </div>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+                    <script>
+                //for button menu
+                $(document).ready(function(){
+                $('.hamb').click(function(){
+                    $('.nav_b').toggleClass('isopen')
+                    })
+                });
+            </script>

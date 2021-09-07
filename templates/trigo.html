@@ -1,0 +1,21 @@
+<body>
+    {% include 'header.html' %}
+        <div class="main">
+            {% block content %}
+                    <form action="add_trigo" class="form" name="form_trigo" method="POST">
+                        {% csrf_token %}
+                        <div class="entry">
+                            <input type="text" name="entry_1" placeholder="a"></br>
+                            <input type="submit" value="Calculer" class="input_trigo">
+                        </div>
+                    </form>
+                    <div class="result" id="result" > 
+                        <div id="trigo" class="dessin"><canvas id="myCanvas"></canvas></div>
+                        <div id="PIs"></div>
+                    </div>
+            {% endblock %}
+        </div>
+    {% include 'footer.html' %}
+</body>
+</html>
+

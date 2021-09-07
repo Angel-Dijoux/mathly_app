@@ -1,0 +1,12 @@
+version: '3.3'
+services: 
+    web:
+        image: elki97413/django_server
+        container_name: python_web
+        command: python manage.py runserver 0.0.0.0:8001
+        volumes: 
+            - .:/app
+        restart: always
+        ports: 
+            - 85:8001
+            

@@ -1,0 +1,13 @@
+.fonction {
+    font-family: "Roboto-i";
+}
+.poly_graph {
+    margin-top: -5%;
+    cursor:grab;
+}
+@media screen and (max-width: 800px){
+    .poly_graph {
+        margin-left: -6%;
+
+    }
+}

@@ -1,0 +1,37 @@
+<body>
+  {% include 'header.html' %}
+  <div class="main">
+    {% block content %}
+        <h3>Polynôme du second degré</h3>
+        <p class="fonction"> f(x) = ax² + bx + c </p>
+        <p> NOTE : Entre uniquement les valeurs ('a', 'b', 'c') de ta fonction, avec les signes correspondents ! <p>
+        <form action="add" class="form" name="form_poly" method="POST">
+          {% csrf_token %}
+          <div class="entry">
+             <input type="text" name="entry_1" placeholder="a">
+             <input type="text" name="entry_2" placeholder="b">
+             <input type="text" name="entry_3" placeholder="c">
+             <input type="text" name="entry_4" placeholder="ax^2 + bx + c">
+             <input type="submit" value="Calculer" class="input_poly">
+          </div>
+        </form>
+        <div class="result" id="result" style="display: none"> 
+          <h3>Discriminant : </h3>
+            <p class="fonction" id="disc">Δ : </p> 
+          <h3>Racine : </h3>
+            <p class="fonction" id="r1"></p> 
+            <p class="fonction" id="r2"></p> 
+          <h3>Factorisation : </h3>
+            <p class="fonction" id="facto"> </p>
+          <h3>Courbe : </h3>
+            <div id="root" class="poly_graph"></div>
+
+        </div>
+        {% if error != verif_null %}
+          <div class="error"><p> {{error}} </p></div>         
+        {% endif %}
+    {% endblock %}
+  {% include 'footer.html' %}
+</body>
+</html>
+
