@@ -22,15 +22,17 @@ input[type="text"]{
     margin-right: 5%;
     margin-left: -2%;
     border-bottom: 3px solid #2E294E;
-    background-color: #FFF9FB;
+    background-color: #f7f9fd;
 
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 input[type="text"]:focus{
-    background-color: #FFF9FE; 
+    background-color: #FFF; 
     opacity: 0.75;
-    border-bottom: 3px solid #14591D;
+    border-bottom: 3px solid #ACBDBA;
+    box-shadow: 0 .625rem 1.25rem rgba(0,0,0,.15);
+    border-radius: 2.6px;
 }
 
 .input_poly{
@@ -38,6 +40,7 @@ input[type="text"]:focus{
     border: none;
     border-radius: 2.6px;
     color: #FFF9FB;
+    height: 25px;
     padding: 3.5%;
     cursor: pointer;
 
@@ -54,7 +57,7 @@ input[type="text"]:focus{
     transition: 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .input_poly:hover, .input_trigo:hover{ 
-    background-color:#483d77;
+    background-color:#ACBDBA;
 }
 
 
@@ -77,8 +80,10 @@ input[type="text"]:focus{
     flex-direction:column ;
     width: auto;
     padding-left: 3%;
+    margin-top: 2.5%;
     border-radius: 2.6px;
-    box-shadow: 0 0 3px #807D7E;
+    box-shadow: 0 .625rem 1.25rem rgba(0,0,0,.15);
+    background-color: #fff;
 
     transition: transform 0.35s cubic-bezier(1, 0, 0, 1);
 }
@@ -98,7 +103,6 @@ input[type="text"]:focus{
         width: 115%;
         margin: 0;
         margin-top: 18.5%;
-        margin-left: -3.5%;
     }
     .result{
         width: 100%;
