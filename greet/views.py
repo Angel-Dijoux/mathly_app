@@ -90,7 +90,9 @@ def add(request):
         return render (request, 'poly.html', {'data': dataJSON, 'verif_error':verif_error, 'error':error})
 
 def add_trigo(request):
-    data ={
-        "entry_1": "b"
+    entry_trig = str(request.POST['entry_1'])
+    data_trig = {
+        "entry_trig": entry_trig,
     }
-    return JsonResponse(data)
+    dataJSON = dumps(data_trig)
+    return render (request, 'trigo.html', {'data_trig': dataJSON})

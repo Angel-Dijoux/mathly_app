@@ -1,9 +1,14 @@
 //for trigo -- base by  https://www.toutjavascript.com/livre/script.php?url=trigo -- 
 
+const data_ = JSON.parse("{{data_trig|escapejs}}")
+const result_2= String(data_["entry_1"])
+
+console.log(result_2)
+
 const myCanvas=document.getElementById("myCanvas");
 const container=myCanvas.parentElement;
 const PI=Math.PI;
-let angle = 2*PI;
+let angle = result_2;
 const animationID=0;
 const valeurs=["0", "PI/6", "PI/4", "PI/3", "PI/2", "2*PI/3", "3*PI/4", "PI", "5*PI/4"];
 
@@ -160,6 +165,3 @@ function displayTrigo(angle) {
 window.onload=function() {
   displayTrigo(angle);
 }
-
-
-
