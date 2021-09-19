@@ -30,6 +30,64 @@
         {% if error != verif_null %}
           <div class="error"><p> {{error}} </p></div>         
         {% endif %}
+        <script>
+          //for recovered json
+          const data = JSON.parse("{{data|escapejs}}")
+          const result = data["discriminant"]
+          const racine_1 = data["racine_1"]
+          const racine_2 = data["racine_2"]
+          const facto_data = data['factorisation']
+          const fn  = data["entry_4"]
+          const center = data["center"]
+          console.log(typeof(fn))          
+          //for function
+          let contentsBounds = document.body.getBoundingClientRect();
+          const i = parseInt(contentsBounds.width)
+          let width = 650;
+          let height = 450;
+          let ratio = contentsBounds.width / width;
+          if (i < 1000){
+          width *= ratio/1.07;
+          height *= ratio/1.07;
+          }
+          if (i > 1000){
+          width *= ratio/2.2;
+          height *= ratio/2.2;
+          }
+  
+          functionPlot({
+          title: 'f(x) = '+fn,
+          target: '#root',
+          width,
+          height,
+          disableZoom: false,
+          yAxis: { autorange: true, },
+          grid: true,
+          data: [{
+              fn: fn
+          }]
+          })
+  
+          //for display data
+          const disp_result  = document.getElementById('result')
+          if (data !== null){
+              disp_result.style.display = "flex";
+          }
+  
+          const disc = document.getElementById('disc')
+          disc.innerHTML+=result;
+  
+          const r1 = document.getElementById('r1')
+          r1.innerHTML+=racine_1;
+          
+          if (racine_2 == true){
+              const r2 = document.getElementById('r2')
+              r2.innerHTML+=racine_2;
+          }
+          
+          const facto = document.getElementById('facto')
+          facto.innerHTML+=facto_data
+        </script>
     {% endblock %}
   {% include 'footer.html' %}
 </body>

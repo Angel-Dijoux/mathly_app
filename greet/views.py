@@ -7,6 +7,8 @@ from django.core import serializers
 import math
 from json import dump, dumps
 
+
+
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -90,9 +92,10 @@ def add(request):
         return render (request, 'poly.html', {'data': dataJSON, 'verif_error':verif_error, 'error':error})
 
 def add_trigo(request):
-    entry_trig = str(request.POST['entry_1'])
-    data_trig = {
-        "entry_trig": entry_trig,
+    entry_trig = request.POST['entry_1']
+    calc = float(entry_trig)
+    data = {
+        "entry_trig": calc,
     }
-    dataJSON = dumps(data_trig)
-    return render (request, 'trigo.html', {'data_trig': dataJSON})
+    dataJSON = dumps(data)
+    return render(request, 'trigo.html', {'data': dataJSON})
