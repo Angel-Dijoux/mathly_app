@@ -93,9 +93,8 @@ def add(request):
 
 def add_trigo(request):
     entry_trig = request.POST['entry_1']
-    calc = float(entry_trig)
     data = {
-        "entry_trig": calc,
+        "entry_trig": entry_trig,
     }
     dataJSON = dumps(data)
     return render(request, 'trigo.html', {'data': dataJSON})
