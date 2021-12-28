@@ -14,7 +14,7 @@ If you want edit MathLy or install this app for debug, it is recommended to use 
 
   And run this ``docker-compose.yml``
   
-          version: '3.3'
+    version: '3.3'
     services: 
         web:
             image: elki97413/django_server
